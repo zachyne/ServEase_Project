@@ -1,0 +1,115 @@
+{% extends 'main.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="main-banner" id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <div class="thumb">
+                        <div class="inner-content">
+                            <h4>We Are ServEase</h4>
+                            <span>Book Event Services with Ease!</span>
+                            <div class="main-border-button">
+                                <a href="{% url 'browse' %}">Browse services now!</a>
+                            </div>
+                        </div>
+                        <img src="{% static 'img/left-banner-image.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>Host</h4>
+                                        <span>Find Hosts</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>Host</h4>
+                                            <p>Find Hosts According to Your Needs.</p>
+                                            <div class="main-border-button">
+                                                <a href="#">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="{% static 'img/baner-right-image-01.png' %}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>Catering</h4>
+                                        <span>Find Catering Services</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>Catering</h4>
+                                            <p>Find Catering Services According to Your Taste.</p>
+                                            <div class="main-border-button">
+                                                <a href="#">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="{% static 'img/baner-right-image-02.png' %}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>Media</h4>
+                                        <span>Find Creatives</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>Media</h4>
+                                            <p>Find Creatives Tailored to Your Vision.</p>
+                                            <div class="main-border-button">
+                                                <a href="#">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="{% static 'img/baner-right-image-03.png' %}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>Venue</h4>
+                                        <span>Find Venues</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>Venue</h4>
+                                            <p>Find Venues That Suit Your Event.</p>
+                                            <div class="main-border-button">
+                                                <a href="#">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src="{% static 'img/baner-right-image-04.png' %}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+{% endblock %}

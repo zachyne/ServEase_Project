@@ -1,0 +1,47 @@
+{% load static %}
+<style>
+    .custom-header {
+    position: fixed; /* Keep it at the top */
+    background-color: white; /* Change this to your desired background color */
+    /* ... other styles ... */
+}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  // Get the current URL path
+  var currentPath = window.location.pathname;
+
+  // Find the corresponding link in the navigation and add the active class
+  $('.navbar-nav a').each(function() {
+    var href = $(this).attr('href');
+    if (href === currentPath) {
+      $(this).addClass('active');
+    }
+  });
+});
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light header-sticky">
+  <div class="container px-4 px-lg-5">
+      <a href="" class="logo">
+        <img src="{% static 'img/logo.png' %}" style="width: 128px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'browse' %}">Browse</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'service:services' %}">Search</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'account:index' %}">{{ request.user|capfirst }}'s Account</a></li>
+              
+          </ul>
+          <div class="d-flex">
+              <a class="btn btn-outline-danger" href="{% url 'logout' %}">Logout</a>
+          </div>
+      </div>
+  </div>
+</nav>

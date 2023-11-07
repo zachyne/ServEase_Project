@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-3 bg-primary-subtle pb-3 position-sticky" style="top: 0; height: 520px; border-radius: 10px;">
+      <!-- Sidebar content -->
+      <form method="GET" action="{% url 'service:services' %}">
+        <div class="input-group mb-3 mt-3">
+          <input type="text" class="form-control" placeholder="Find services..." value="{{ query }}" name="query">
+          <button class="btn btn-outline-secondary">Search</button>
+        </div>
+      </form>
+
+      <h2>Categories</h2>
+
+      <ul class="list-group mt-3">
+        <li class="list-group-item {% if category_id == 0 %}bg-success-subtle{% endif %}">
+          <a href="{% url 'service:services' %}" class="list-group-item list-group-item-action list-group-item-primary">All Services</a>
+        </li>
+        {% for category in categories %}
+        <li class="list-group-item{% if category.id == category_id %} bg-success-subtle{% endif %}">
+          <a href="{% url 'service:services' %}?query={{ query }}&category={{ category.id }}" class="list-group-item list-group-item-action list-group-item-primary">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="col-md-9">
+      <div class="row">
+        {% for service in services %}
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.name }}-image">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ service.name }}</h5>
+              <p class="card-text">{{ service.description }}</p>
+              <p class="card-text" style="color: #020269; font-size:12px; font-weight: bold;">Php {{ service.price|floatformat:2 }}</p>
+              <a href="{% url 'service:detail' service.id %}" class="btn btn-primary mt-auto">View Details</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

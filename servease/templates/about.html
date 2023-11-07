@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<h1 class="text-center my-4">The Team</h1>
+
+
+<div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'img/team1.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-text">Jansen C. Solayao</h4>
+                    <p class="card-text">Team Leader</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'img/team3.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-text">Eusedio T. Villato III</h4>
+                    <p class="card-text">Sub-Leader</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'img/team2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-text">Cyrine B. Malesido</h4>
+                    <p class="card-text">Member</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center" style="height: 300px;">
+            <img src="{% static 'img/logo.png' %}" style="width: 300px;">
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+	<h5 class="text-center mb-3">About ServEase</h5>
+	<p class="text-center">
+		ServEase is an event services booking app. This app was made with Bootstrap and Django for its backend. This app was made by Cyrine Malesido, Jansen Solayao, and Eusedio Villato III as part of their requirements for the subject, "Application Development & Emerging Technologies". These group of students are from Biliran Province State University enrolled in Bachelor of Science in Computer Science program under the School of Technology and Computer Studies.
+	</p>
+</div>
+
+
+
+{% endblock %}
